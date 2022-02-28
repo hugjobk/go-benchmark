@@ -1,10 +1,11 @@
 package benchmark_test
 
 import (
-	"benchmark"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/hugjobk/go-benchmark"
 )
 
 func subtask1() error {
