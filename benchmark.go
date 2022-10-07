@@ -156,11 +156,11 @@ func (r *Result) Report(w io.Writer) *Result {
 		for _, interval := range r.LatencyIntervals {
 			percentage := float64(interval.Count*100) / float64(r.PassedCount)
 			if interval.LowerBound == 0 {
-				fmt.Fprintf(tw, " * Latency <= %s\t: %d\t(%.2f%%)\n", interval.UpperBound, interval.Count, percentage)
+				fmt.Fprintf(tw, " * Latency <= %s\t: %d \t(%.2f%%)\n", interval.UpperBound, interval.Count, percentage)
 			} else if interval.UpperBound == math.MaxInt64 {
-				fmt.Fprintf(tw, " * %s < Latency\t: %d\t(%.2f%%)\n", interval.LowerBound, interval.Count, percentage)
+				fmt.Fprintf(tw, " * %s < Latency\t: %d \t(%.2f%%)\n", interval.LowerBound, interval.Count, percentage)
 			} else {
-				fmt.Fprintf(tw, " * %s < Latency <= %s\t: %d\t(%.2f%%)\n", interval.LowerBound, interval.UpperBound, interval.Count, percentage)
+				fmt.Fprintf(tw, " * %s < Latency <= %s\t: %d \t(%.2f%%)\n", interval.LowerBound, interval.UpperBound, interval.Count, percentage)
 			}
 		}
 	}
